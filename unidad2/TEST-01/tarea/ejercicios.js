@@ -3,21 +3,21 @@
 // - Ejercicio 1: Sumar dos números
 // - Escribe un programa que sume dos números.
 function sumarNumeros() {
-    let num1 = parseInt(document.getElementById("n1").value);
-    let num2 = parseInt(document.getElementById("n2").value);
+    let num1 = parseInt(prompt());
+    let num2 = parseInt(prompt());;
     let suma = num1 + num2;
-    document.getElementById("result").innerHTML = "La suma es: " + suma;
+    alert("La suma es: " + suma)
 }
 
 // - Ejercicio 2: Verificar si un número es par o impar
 // - Escribe un programa que verifique si un número es par o impar.
 function verificar() {
-    let numero = parseInt(document.getElementById("numero").value);
+    let numero = parseInt(prompt());
     let mensaje = "Es par";
     if(numero % 2!== 0) {
         mensaje = "Es impar";
     }
-    document.getElementById("mensaje").innerHTML = mensaje;
+    alert(mensaje);
 }
 
 // - Ejercicio 3: Tabla de multiplicar
@@ -47,7 +47,7 @@ console.log(pasarAFarenheit(25));
 // - Ejercicio 6: Comprobar si un número es positivo, negativo o cero
 // - Escribe un programa que verifique si un número es positivo, negativo o cero.
 function comprobarNumeros() {
-    let n = parseInt(document.getElementById("numero").value);
+    let n = parseInt(prompt());
     let result = "es 0";
     if(n > 0) {
         result = "es positivo"
@@ -55,7 +55,7 @@ function comprobarNumeros() {
         result = "es negativo"
     }
 
-    document.getElementById("mensaje").innerHTML = result;
+    console.log(result)
 }
 
 // - Ejercicio 7: Imprimir los números del 1 al 5
@@ -77,9 +77,9 @@ console.log(suma);
 // - Escribe un programa que cuente cuántas vocales hay en la palabra "javascript".
 let vocales = ['a', 'e', 'i', 'o', 'u'];
 let contador = 0
-let cadena = "javascript";
-for (const key in cadena) {
-    if(vocales.includes(cadena[key].toLocaleLowerCase())){
+let cadena2 = "javascript";
+for (const key in cadena2) {
+    if(vocales.includes(cadena2[key].toLocaleLowerCase())){
         contador++
     }
 }
@@ -89,46 +89,46 @@ console.log("Número de vocales en la cadena: " + contador);
 // - Ejercicio 10: Saludo personalizado (con entrada)
 // Pide el nombre del usuario y muestra un saludo personalizado.
 function saludar() {
-    let usuario = document.getElementById("usuario").value;
-    document.getElementById("saludo").innerHTML = "Hola, " + usuario + "!";
+    let usuario = prompt();
+    console.log("Hola, " + usuario + "!");
 }
 
 // - Ejercicio 11: Sumar solo números pares hasta 50
 // - Escribe un programa que sume todos los números pares desde 1 hasta 50.
-let suma = 0;
+let suma2 = 0;
 for (let index = 1; index <= 50; index++) {
     if (index % 2 == 0) {
-        suma += index;
+        suma2 += index;
     }
 }
 
-console.log(suma);
+console.log(suma2);
 
 // - Ejercicio 12: Convertir número a día de la semana
 // - Escribe un programa que convierta un número (del 1 al 7) al día de la semana correspondiente.
 function convertir() {
-    let nDia = parseInt(document.getElementById("dia").value);
+    let nDia = parseInt(prompt());
     switch (nDia) {
         case 1:
-            document.getElementById("diaSemana").innerHTML = "Lunes";
+            console.log("Lunes");
             break;
         case 2:
-            document.getElementById("diaSemana").innerHTML = "Martes";
+            console.log("Martes");
             break;
         case 3:
-            document.getElementById("diaSemana").innerHTML = "Miercoles";
+            console.log("Miercoles");
             break;
         case 4:
-            document.getElementById("diaSemana").innerHTML = "Jueves";
+            console.log("Jueves");
             break;
         case 5:
-            document.getElementById("diaSemana").innerHTML = "Viernes";
+            console.log("Viernes");
             break;
         case 6:
-            document.getElementById("diaSemana").innerHTML = "Sábado";
+            console.log("Sábado");
             break;
         case 7:
-            document.getElementById("diaSemana").innerHTML = "Domingo";
+            console.log("Domingo");
             break;
     }
 }
@@ -390,17 +390,61 @@ console.log(contarLetra("hoola",'o'));
 // 1. Duplicar los elementos de un array
 // Crea una función que reciba un array de números y devuelva un nuevo array con cada número
 // duplicado.
+function duplicarArray(array){
+    let arrayDuplicado = []
+    for(let i = 0; i < array.length; i++){
+        arrayDuplicado.push(array[i]);
+        arrayDuplicado.push(array[i]);
+    }
+    return arrayDuplicado;
+}
+
+console.log(duplicarArray([1, 2, 3]))
 
 // 2. Comprobar si un valor está en el array
 // Escribe una función que reciba un array y un valor, y devuelva `true` si el valor está en el array, o
 // `false` en caso contrario.
+function comprobarValor(array,valor) {
+    return array.includes(valor);
+}
+
+console.log(comprobarValor([1,2,3],2));
 
 // 3. Contar números impares en un array
 // Escribe una función que cuente cuántos números impares hay en un array.
+function contarImpares(array){
+    let contador = 0;
+    for(let i = 0; i < array.length; i++){
+        if(array[i] % 2!= 0){
+            contador++;
+        }
+    }
+    return contador;
+}
+
+console.log(contarImpares([1, 2, 3, 4, 5]));
 
 // 4. Suma de los cuadrados de los elementos
 // Crea una función que devuelva la suma de los cuadrados de los números de un array.
+function sumarCuadrados(array) {
+    let sumaCuadrados = 0;
+    for (let i = 0; i < array.length; i++) {
+        sumaCuadrados += array[i] ** 2;
+    }
+    return sumaCuadrados;
+}
+
+console.log(sumarCuadrados([2,2]));
 
 // 5. Obtener los primeros `n` elementos de un array
 // Escribe una función que reciba un array y un número `n`, y devuelva los primeros `n` elementos del
 // array.
+function obtenerLosPrimeros(array,n) {
+    let arrayPrimeros = [];
+    for (let i = 0; i < n; i++) {
+        arrayPrimeros.push(array[i]);
+    }
+    return arrayPrimeros;
+}
+
+console.log(obtenerLosPrimeros([1,2,3],2))
