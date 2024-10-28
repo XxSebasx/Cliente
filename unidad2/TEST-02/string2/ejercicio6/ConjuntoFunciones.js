@@ -1,17 +1,26 @@
+// Cargar un String por teclado e implementar las siguientes funciones:
+// a) Imprimir la primera mitad de los caracteres de la cadena.
+// b) Imprimir el último carácter.
+// c) Imprimirlo en forma inversa.
+// d) Imprimir cada carácter del String separado con un guión.
+// e) Imprimir la cantidad de vocales almacenadas.
 function imprimirMitad(cadena) {
-    console.log(cadena.substring(0, cadena.length / 2));
+    document.write(cadena.substring(0, cadena.length / 2));
 }
 
 function imprimirUltimo(cadena) {
-    console.log(cadena[cadena.length - 1]);
+    document.write(cadena[cadena.length - 1]);
 }
 
 function imprimirReversa(cadena) {
-    console.log(cadena.split('').reverse().join(''));
+    let cadenaInversa = "";
+    for (let i = cadena.length - 1; i >= 0; i--) {
+        cadenaInversa += cadena[i];
+    }
 }
 
 function imprimirCaracterSeparado(cadena) {
-    console.log(cadena.split('').join('-'));
+    document.write(cadena.split('').join('-'));
 }
 
 function contarVocales(cadena) {
@@ -22,11 +31,16 @@ function contarVocales(cadena) {
             contador++;
         }
     }
-    console.log("Cantidad de vocales: " + contador);
+    document.write("Cantidad de vocales: " + contador);
 }
 
 let cadena = prompt("Ingrese una cadena:");
 imprimirMitad(cadena);
+document.write("<br>");
 imprimirUltimo(cadena);
+document.write("<br>");
 imprimirReversa(cadena);
+document.write("<br>");
 imprimirCaracterSeparado(cadena);
+document.write("<br>");
+contarVocales(cadena);

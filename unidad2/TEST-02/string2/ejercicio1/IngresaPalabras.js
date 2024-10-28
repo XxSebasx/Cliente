@@ -1,3 +1,5 @@
+// Ingresar una serie de nombres por teclado hasta que se cargue la palabra Fin,
+// y mostrar cuántos nombres se ingresaron.
 function ingresarPalabras() {
 	let contador = 0;
 	while (true) {
@@ -11,4 +13,4 @@ function ingresarPalabras() {
 	return contador;
 }
 
-console.log(ingresarPalabras());
+document.write(ingresarPalabras());

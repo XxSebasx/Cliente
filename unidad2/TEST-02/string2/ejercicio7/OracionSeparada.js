@@ -1,7 +1,9 @@
+// Codifique un programa que permita cargar una oración por teclado, luego
+// mostrar cada palabra ingresada en una línea distinta.
 function mostrarOracion(cadena) {
     let lista = cadena.split(' ');
     lista.forEach(cadena => {
-        console.log(cadena);
+        document.write(cadena + '<br>');
     });
 }
 

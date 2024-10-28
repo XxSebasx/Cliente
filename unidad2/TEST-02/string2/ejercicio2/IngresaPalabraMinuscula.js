@@ -1,3 +1,5 @@
+// Igual al anterior, pero que termine la aplicación sin contemplar mayúsculas
+// ni minúsculas. Es decir que para salir se pueda teclear fin, Fin o FIN.
 function ingresarPalabras() {
 	let contador = 0;
 	while (true) {
@@ -11,4 +13,4 @@ function ingresarPalabras() {
 	return contador;
 }
 
-console.log(ingresarPalabras());
+document.write(ingresarPalabras());
