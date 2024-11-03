@@ -1,6 +1,4 @@
-// Eliminar los elementos falsos
-// Introduce un array y elimina todos los valores `falsos` (`0`, `""`, `null`,
-// `undefined`, `NaN`, `false`).
+
 function eliminarValoresFalsos(array){
     let arraySinFalsos = [];
     for (let i = 0; i < array.length; i++) {
