@@ -1,7 +1,5 @@
-function mostrarTecla() {
-    let valor = document.getElementById("input").value;
-    document.getElementById("parrafo").innerHTML = "Tecla presionada: " + valor;
-
+function mostrarTecla(event) {
+    document.getElementById("parrafo").innerHTML = "Tecla presionada: " + event.key;
 }
 
 

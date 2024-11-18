@@ -1,8 +1,14 @@
-function bloquear() {
+
+
+function bloquear(event) {
+    event.preventDefault();
     alert('bloqueado');
 }
+
 function inicio() {
-    document.getElementById('seleccion').addEventListener('contexmenu', bloquear);
+    const seleccion = document.getElementById('seleccion');
+    seleccion.addEventListener('contextmenu', bloquear);
 }
+
 
 window.onload = inicio;
