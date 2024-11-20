@@ -4,4 +4,4 @@ function muestra() {
     };
 }
 
-console.log(document.getElementsByClassName('adicional oculto')[0].style.visibility = 'hidden');
+document.getElementsByClassName('adicional oculto')[0].style.visibility = 'hidden';

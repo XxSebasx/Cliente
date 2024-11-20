@@ -24,13 +24,21 @@ enlace.appendChild(textoEnlace);
 parrafoTercero.appendChild(enlace);
 
 
-
-
-
 //inserta un párrafo de color rojo entre el tercer y el cuarto párrafos
 
+let parrafoRojo = document.createElement("p");
+parrafoRojo.style.color = "red";
+let textoRojo = document.createTextNode("Este es un párrafo rojo");
+parrafoRojo.appendChild(textoRojo);
 
-//elimina el segundo párrafo [1]	
+document.body.insertBefore(parrafoRojo, document.body.getElementsByTagName("p")[3]);
+
+
+//elimina el segundo párrafo [1]
+
+let parrafoUno = document.body.getElementsByTagName("p")[1];
+document.body.removeChild(parrafoUno);
+
 
 
 </script>
