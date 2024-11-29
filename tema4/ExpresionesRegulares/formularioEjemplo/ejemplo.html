@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo de formulario</title>
+
+    <script>
+        function Prueba() {
+            //alert(document.forms[0].elements[0].value);
+            //alert(document.forms["form1"]["texto"].value);
+            // también se puede acceder con las dos formas anteriores
+            alert(document.form1.texto.value);
+            alert(document.form1.contrasenia.value);
+            alert(document.form1.textarea.value);
+            alert(document.form1.checkbox.checked);
+            alert(document.form1.botonesradio.value);
+            alert(document.form1.menu.value);
+
+            for (var i = 0; i < document.form1.menu2.options.length; i++) {
+                if (document.form1.menu2.options[i].selected) {
+                    alert(document.form1.menu2.options[i].value);
+                }
+            }
+            // Para que desde PHP se pueda acceder como un array
+            document.form1.menu2.name = "menu2[]";
+
+            alert(document.form1.fichero.value);
+
+            return false;
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <form name="form1" action="recepcion.php" method="post" onSubmit="return Prueba()" enctype="multipart/form-data">
+        Campo de texto: <input type="text" name="texto" /><br />
+        Campo de contraseña: <input type="password" name="contrasenia" /><br />
+        Campo Textarea: <textarea name="textarea"></textarea>
+        Checkbox: <input type="checkbox" name="checkbox" checked="checked" /><br />
+        Botones de radio excluyentes:
+        A <input type="radio" name="botonesradio" value="A" />
+        B <input type="radio" name="botonesradio" value="B" />
+        C <input type="radio" name="botonesradio" value="C" />
+        <br />
+        Menú de selección:
+        <select name="menu">
+            <option value="1">Primero</option>
+            <option value="2">Segundo</option>
+            <option value="3">Tercero</option>
+        </select>
+        <br />
+        Menú de selección múltiple:
+        <select name="menu2" size="3" multiple="multiple">
+            <option value="1">Primero</option>
+            <option value="2">Segundo</option>
+            <option value="3">Tercero</option>
+        </select>
+        <br />
+        Fichero: <input type="file" name="fichero" />
+        <br />
+        <input type="submit" name="enviar">
+    </form>
+</body>
+
+</html>
