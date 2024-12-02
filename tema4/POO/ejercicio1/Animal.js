@@ -1,3 +1,6 @@
+// 1.- Crea una clase con dos propiedades y dos métodos donde se evidencien los conceptos de
+// abstracción y encapsulamiento de la programación orientada a objetos. (Explica esos conceptos
+// aplicados a esa clase).
 
 //Clase abstracta padre
 class Animal{
@@ -11,6 +14,9 @@ class Animal{
         this.#nombre = nombre
     }
 
+    //metodos de la clase
+
+    //Propiedad getter para el nombre de la clase abstracta
     getNombre(){
         return this.#nombre
     }
@@ -32,23 +38,6 @@ class Perro extends Animal{
     }
 }
 
-class Gato extends Animal{
-    constructor(nombre, especie){
-        super(nombre, especie)
-    }
-    ruido(){
-        console.log('Miau!');
-    }
-}
-
 const perro = new Perro('Buddy', 'Perro');
 console.log(perro.getNombre());
 perro.ruido(); 
-
-
-
-const gato = new Gato('Garfield', 'Gato');
-
-console.log(gato.getNombre());
-gato.ruido();
-

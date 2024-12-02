@@ -1,40 +1,69 @@
+//2.- Escribe un programa con herencia de clases que permita modelar los objetos Teléfono, Fijo y
+// Móvil, de manera que Teléfono sea la clase madre, y Fijo y Móvil, clases derivadas.
 
+//Clase padre telefono
 class Telefono{
-    constructor(marca, modelo, color){
+    #marca;
+    #modelo;
+    #color;
+    #numero
+    constructor(marca, modelo, color,numero){
         if(new.target === Telefono){
             throw new Error('Esta clase no puede ser instanciada directamente');
         }
-        this.marca = marca;
-        this.modelo = modelo;
-        this.color = color;
+        this.#marca = marca;
+        this.#modelo = modelo;
+        this.#color = color;
+        this.#numero = numero;
     }
+
+    //getters
+    getMarca(){
+        return this.#marca;
+    }
+    getModelo(){
+        return this.#modelo;
+    }
+    getColor(){
+        return this.#color;
+    }
+
+    getNumero(){
+        return this.#numero;
+    }
+
 
     llamar(numero){}
 }
 
+//Clases hijas
 class Movil extends Telefono{
     constructor(marca, modelo, color, numero){
-        super(marca, modelo, color);
-        this.numero = numero;
+        super(marca, modelo, color,numero);
     }
-    llamar(numero){
-        console.log(`Llamando al ${this.numero}...`);
+    llamar(){
+        console.log(`Llamando al ${this.getNumero()}`);
     }
 }
 
 class Fijo extends Movil{
-    constructor(marca, modelo, color, numero, areaCode){
-        super(marca, modelo, color, numero);
-        this.areaCode = areaCode;
+    #areaCode;
+    constructor(marca, modelo, color,numero,areaCode){
+        super(marca, modelo, color,numero);
+        this.#areaCode = areaCode;
     }
-    llamar(numero){
-        console.log(`Llamando al ${this.areaCode}-${this.numero}...`);
+    llamar(){
+        console.log(`Llamando al ${this.#areaCode}-${this.getNumero()}`);
     }
 }
 
-const movil1 = new Movil('Samsung', 'Galaxy S20', 'Negro', '555-1234');
-movil1.llamar('555-5678');
+//Instanciamos objetos
+const movil = new Movil('Samsung', 'Galaxy S21', 'Negro', '6543210987');
+movil.llamar();
 
-const fijo1 = new Fijo('T-Mobile', 'Nexus 5', 'Rojo', '555-9012', '555');
-fijo1.llamar('555-9012');
+const fijo = new Fijo('T-Mobile', 'iPhone 13 Pro Max', 'Gris', '5555555555', '555');
+fijo.llamar();
+
+
+
 
